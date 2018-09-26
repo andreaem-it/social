@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row mt-3">
+        <div class="col-2">
+            {% include 'template/sidebar.left.html.twig' %}
+        </div>
+        <div class="col-8">
+            {{ render(controller('AppBundle:Feed:post', {form: form})) }}
+            {{ render(controller('AppBundle:Feed:feed')) }}
+        </div>
+        <div class="col-2">
+            {% include 'template/sidebar.right.html.twig' %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-body">
+        <h5>A cosa stai pensando?</h5>
+        {{ form_start(form) }}
+        {{ form_widget(form.description) }}
+        <div class="float-right">
+            {{ form_widget(form.submit) }}
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>

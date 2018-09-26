@@ -1,0 +1,39 @@
+{% for feed in feeds %}
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <a href="">
+                        <img src="data/profile/{{ feed.uid }}.jpg" class="rounded img-fluid mr-3" style="max-width: 70px">
+                    </a>
+                    <div class="media-body">
+                        <h5 class="mt-0">
+                            <a href="">{{ func.convertUIDName(feed.uid) }}</a>
+                        </h5>
+                        <p class="text-small text-muted">
+                            {{ feed.datetime|ago }}
+                        </p>
+                        <p class="mt-1 mb-1">
+                            {{ feed.description }}
+                            {% if feed.hasPhoto == 1 %}
+                                <img class="img-fluid mt-2" src="{{ feed.photoUrl }}">
+                            {% endif %}
+                        </p>
+                        <br>
+                        <a href="">
+                            <i class="fa fa-thumbs-up"></i> Like
+                        </a>
+                        <a href="">
+                            <i class="fa fa-comment ml-3"></i> Commenta
+                        </a>
+                        <a href="">
+                            <i class="fa fa-share-square ml-3"></i> Condividi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
